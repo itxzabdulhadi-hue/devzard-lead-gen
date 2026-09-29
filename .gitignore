@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Builds
+dist/
+build/
+*.tsbuildinfo
+
+# Generated Prisma client
+server/src/generated/
+
+# Environment (never commit real secrets)
+.env
+.env.local
+.env.*.local
+
+# Local dev database (embedded Postgres data directory)
+.localdb/
+
+# Test artifacts
+coverage/
+.vitest/
+
+# Fixture parquet (regenerate with `npm run fixtures:generate`)
+fixtures/*.parquet
+
+# OS / editor
+.DS_Store
+*.log

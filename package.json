@@ -1,0 +1,26 @@
+{
+  "name": "devzard-lead-gen",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Devzard Lead Generator — internal tool to discover businesses, analyze their web presence, score digital opportunities, and manage outreach leads.",
+  "type": "module",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspace server",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "db:start": "node server/scripts/db.mjs start",
+    "db:stop": "node server/scripts/db.mjs stop",
+    "db:migrate": "npm run db:migrate --workspace server",
+    "db:seed": "npm run db:seed --workspace server",
+    "fixtures:generate": "node server/scripts/generate-fixture.mjs",
+    "demo-sites": "node server/scripts/demo-sites.mjs"
+  }
+}

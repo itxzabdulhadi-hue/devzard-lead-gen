@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Devzard dark foundation */
+  --color-ink-950: #08080a;
+  --color-ink-900: #0c0c0f;
+  --color-ink-850: #101014;
+  --color-ink-800: #14141a;
+  --color-ink-700: #1b1b22;
+  --color-ink-600: #24242d;
+  --color-ink-500: #2f2f3a;
+  --color-ink-400: #3d3d4a;
+
+  /* Metallic gold accent — used sparingly */
+  --color-gold-600: #a8862a;
+  --color-gold-500: #c9a227;
+  --color-gold-400: #d9b544;
+  --color-gold-300: #e6c96e;
+  --color-gold-200: #f1dfa0;
+
+  --animate-fade-in: fade-in 0.18s ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(2px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-ink-950 text-zinc-200 font-sans antialiased;
+  font-feature-settings: 'tnum' 1; /* tabular numbers for scores */
+}
+
+::selection {
+  background: rgba(201, 162, 39, 0.35);
+}
+
+/* Slim scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2f2f3a transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #2f2f3a;
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(0.7);
+  cursor: pointer;
+}
